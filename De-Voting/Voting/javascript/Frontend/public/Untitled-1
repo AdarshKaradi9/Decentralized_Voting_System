@@ -1,0 +1,43 @@
+import React from 'react';
+import Logs from '../Logs/Logs';
+
+class LogsList extends React.Component{
+
+    renderTableData() {
+        return this.state.students.map((student, index) => {
+            const { id, name, age, email } = student //destructuring
+            return (
+                <tr>
+                <th scope="row" style={{width:'100px'}}>{Key}</th>
+                <td style={{width:'100px'}}>{load}</td>
+                <td style={{width:'100px'}}>{memory}</td>
+                <td style={{width:'100px'}}>{os}</td>
+                <td style={{width:'100px'}}>{ram}</td>
+                </tr>
+            )
+        })
+  }
+
+
+
+    render() {
+        const dataLogs = this.props.transactionData.data;
+        return(
+            <div>
+            <h1 id='title'>LOGS</h1>
+            <table id='students'>
+               <tbody>
+                  {Object.keys(dataLogs).length > 1
+                ? dataLogs.map((val,i) => {
+                    return(<Logs Key={dataLogs[i].Key} load={dataLogs[i].Record.load} memory={dataLogs[i].Record.memory} os={dataLogs[i].Record.os} ram={dataLogs[i].Record.ram}  />)
+                })
+                : <Logs load={dataLogs.load} memory={dataLogs.memory} os={dataLogs.os} ram={dataLogs.ram}/>
+            }
+               </tbody>
+            </table>
+         </div>
+            );
+    }
+};
+
+export default LogsList;
