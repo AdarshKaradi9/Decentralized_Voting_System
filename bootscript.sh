@@ -3,17 +3,13 @@
 cd ../fabric-samples/first-network
 ./byfn.sh down
 
-cd ../../De-Voting/Voting
+cd ../../Decentralized_Voting_System/Voting
 ./startFabric.sh javascript
 
 cd javascript
 ./remove.sh
 
-node del.js
 node enrollAdmin.js
-
-#cd Frontend
-#node ip.js
 
 
 

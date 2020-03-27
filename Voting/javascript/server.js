@@ -13,23 +13,8 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const util = require('util');
 
-const knex = require('knex')({
-    client: 'pg',
-    version: '12.1',
-    connection: {
-      host : '127.0.0.1',
-      user : 'postgres',
-      password : '0000',
-      database : 'login'
-    }
-  });
-
-
 app.use(express.json());
 app.use(cors());
-
-const db = knex;
-
 
 let network = require('./network.js');
 
